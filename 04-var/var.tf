@@ -3,11 +3,11 @@ variable "sample" {
 }
 
 output "sample" {
-  value = "var.hello world"
+  value = var.sample
 }
 
 variable "hyder" {}
 
 output "hyder" {
-  value = "var.hyder"
+  value = var.hyder
 }
