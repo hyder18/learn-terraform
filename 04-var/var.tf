@@ -42,7 +42,7 @@ variable "d1" {
   default = [
     {
       course_name = "aws"
-      trainer_name = "hyder"
+       trainer_name = "hyder"
     },
     {
       course_name = "devops"
@@ -50,6 +50,7 @@ variable "d1" {
     }
   ]
 }
+
 output "course_name" {
-  value = var.d1.*.trainer_name
+  value = var.d1.*.course_name
 }
