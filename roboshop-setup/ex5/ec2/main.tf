@@ -14,14 +14,10 @@ resource "aws_instance" "ec2" {
   }
 }
 
-resource "aws_route53_record" "record" {
-  zone_id = "Z05481573J6LJA916DTHH"
-  name    = "${var.component}-dev.hyder71.online"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.ec2.private_ip]
-}
-
 variable "component" {}
 variable "instance_type" {}
 variable "sg_id" {}
+
+output "private_ip" {
+  value = aws_instance.ec2.private_ip
+}
